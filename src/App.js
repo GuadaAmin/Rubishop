@@ -1,9 +1,14 @@
+import React from 'react';
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import NavBar from './components/NavBar/NavBar.js';
 
 function App() {
   return (
-    <NavBar />
+    <div>
+      <NavBar />
+      <ItemListContainer texto="Hola! Este es un texto provisorio." />
+    </div>
   );
 }
 

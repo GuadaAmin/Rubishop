@@ -1,6 +1,7 @@
 import logo from './images/logo.png'; 
 import './NavBar.css';
-import ('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+import CartWidget from '../CartWidget/CartWidget';
+import React from 'react';
 
 const NavBar= () => {
     return (
@@ -12,6 +13,7 @@ const NavBar= () => {
                 <li><a href='#'>Contacto</a></li>
                 <li><a href='#'>About</a></li>
             </ul>
+            <CartWidget />
         </div>
     )
 };
