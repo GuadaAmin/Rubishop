@@ -2,17 +2,27 @@ import React from "react";
 import './ItemCount.css';
 import { useState } from "react";
 
-const ItemCount = () => {
+const ItemCount = ({nombreProducto}) => {
+    
     const [ItemCount, setItemCount] = useState(1);
         const sumar = () => {
-            setItemCount(ItemCount + 1);
+            if (ItemCount < 10){
+                setItemCount(ItemCount + 1);
+            } else {
+                setItemCount(1)
+            }
         }
         const restar = () => {
-            setItemCount(ItemCount - 1);
+            if (ItemCount > 1){
+                setItemCount(ItemCount - 1);
+            } else {
+                setItemCount(10)
+            }
         }
+
     return (
         <div className="counterContainer">
-            <h4>Cubo 3×3×3:</h4>
+            <h4>{nombreProducto}:</h4>
             <div className="counter">
                 <div className="itemCountButton" onClick={restar}><h4>-</h4></div>
                 <div className="itemCount">{ItemCount}</div>
