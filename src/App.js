@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer texto="Hola! Este es un texto provisorio." />
+      <ItemListContainer greeting="Hola! Este es un texto provisorio." />
     </div>
   );
 }
