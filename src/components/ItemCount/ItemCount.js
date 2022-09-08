@@ -2,11 +2,11 @@ import React from "react";
 import './ItemCount.css';
 import { useState } from "react";
 
-const ItemCount = ({nombreProducto}) => {
+const ItemCount = ({nombreProducto, stock, initial}) => {
     
-    const [ItemCount, setItemCount] = useState(1);
+    const [ItemCount, setItemCount] = useState(initial);
         const sumar = () => {
-            if (ItemCount < 10){
+            if (ItemCount < stock){
                 setItemCount(ItemCount + 1);
             } else {
                 setItemCount(1)
@@ -16,7 +16,7 @@ const ItemCount = ({nombreProducto}) => {
             if (ItemCount > 1){
                 setItemCount(ItemCount - 1);
             } else {
-                setItemCount(10)
+                setItemCount(stock)
             }
         }
 
