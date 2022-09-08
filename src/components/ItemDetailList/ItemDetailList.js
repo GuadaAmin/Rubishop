@@ -1,12 +1,12 @@
 import React from "react";
-import Item from "../Item/Item.js";
+import ItemDetail from "../ItemDetail/ItemDetail.js";
 
-const ItemList = ({itemsList}) => {
+const ItemDetailList = ({itemsList}) => {
     return (
         <div>
             {itemsList.map((item) => {
                 return (
-                    <Item 
+                    <ItemDetail 
                         title={item.title} 
                         description={item.description} 
                         pictureUrl={item.pictureUrl} 
@@ -19,4 +19,4 @@ const ItemList = ({itemsList}) => {
     )
 };
 
-export default ItemList;
+export default ItemDetailList;
