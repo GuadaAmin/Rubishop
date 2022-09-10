@@ -1,11 +1,14 @@
 import React from "react";
 import './ItemListContainer.css';
-import ItemCount from "../ItemCount/ItemCount";
 import data from "../ItemList/mockData";
 import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
+    const {categoria} = useParams();
+    console.log(categoria)
+
     const [items, setItems] = useState([]);
 
     const getItems = new Promise((resolve, reject) => {
@@ -16,13 +19,17 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         getItems.then((result) => {
-            setItems(result);
+            if (categoria) {
+                const newCategoria = result.filter(items => items.categoria === categoria)
+                setItems(newCategoria)
+            } else {
+                setItems(result);
+            }
         })
-    }, []);
+    }, [categoria]);
 
     return (
         <div className="itemListContainer">
-            <ItemCount nombreProducto="Cubo 3×3×3" stock="10" initial="1" />
             <ItemList itemsList={items}/>
         </div>
     );

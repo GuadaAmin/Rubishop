@@ -1,20 +1,17 @@
 import React from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
+    const {productId} = useParams();
+
     const [items, setItems] = useState([]);
 
     const getItems = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve({
-                id: "1",
-                title: "Cubo 3×3×3 Qiyi",
-                description: "Cubo original marca Qiyi",
-                price: "$3000",
-                pictureUrl:
-                    "https://http2.mlstatic.com/D_NQ_NP_730276-MLA40147249639_122019-O.webp",
-            });
+            const detalle = items.find(items => items.id === parseInt(productId));
+            resolve(detalle);
         }, 2000);
     });
 
@@ -22,7 +19,7 @@ const ItemDetailContainer = () => {
         getItems.then((result) => {
             setItems(result);
         })
-    }, []);
+    }, [productId]);
 
     return (
         <div>
