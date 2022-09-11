@@ -1,5 +1,7 @@
 import React from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import data from '../ItemList/mockData';
+import './ItemDetailContainer.css';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -10,7 +12,7 @@ const ItemDetailContainer = () => {
 
     const getItems = new Promise((resolve, reject) => {
         setTimeout(() => {
-            const detalle = items.find(items => items.id === parseInt(productId));
+            const detalle = data.find(items => items.id === productId);
             resolve(detalle);
         }, 2000);
     });
@@ -22,7 +24,7 @@ const ItemDetailContainer = () => {
     }, [productId]);
 
     return (
-        <div>
+        <div className='detail'>
             <ItemDetail
                 title={items.title}
                 description={items.description}
