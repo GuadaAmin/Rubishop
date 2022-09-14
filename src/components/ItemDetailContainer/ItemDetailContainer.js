@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 const ItemDetailContainer = () => {
     const {productId} = useParams();
 
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState();
 
     const getItems = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -25,6 +25,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div className='detail'>
+            {!items ? (<h3 className='cargando'>Cargando...</h3>) : (
             <ItemDetail
                 title={items.title}
                 description={items.description}
@@ -32,6 +33,7 @@ const ItemDetailContainer = () => {
                 price={items.price}
                 key={items.id}
             />
+            )}            
         </div>
     );
 }

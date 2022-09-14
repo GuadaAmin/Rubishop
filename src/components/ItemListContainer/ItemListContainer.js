@@ -9,7 +9,7 @@ const ItemListContainer = () => {
     const {categoria} = useParams();
     console.log(categoria)
 
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState();
 
     const getItems = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -30,7 +30,7 @@ const ItemListContainer = () => {
 
     return (
         <div className="itemListContainer">
-            <ItemList itemsList={items}/>
+            {!items ? (<h3>Cargando...</h3>) : (<ItemList itemsList={items}/>)}
         </div>
     );
 }
