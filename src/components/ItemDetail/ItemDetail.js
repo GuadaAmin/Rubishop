@@ -21,8 +21,8 @@ const ItemDetail = ({item, title, pictureUrl, description, price}) => {
             <h1>Detalle {title}</h1>
             <img src={pictureUrl} alt={description} height="300px" />
             <p>{description}</p>
-            <p>{price}</p>
-            <ItemCount nombreProducto="Producto" stock="10" initial="1" onAdd={onAdd} />
+            <p>${price}</p>
+            <ItemCount nombreProducto="Producto" stock={10} initial={1} onAdd={onAdd} />
             <p>Cantidad: {contador}</p>
         </div>
     )

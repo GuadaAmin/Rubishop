@@ -45,22 +45,14 @@ const CartProvider = ({children}) => {
 
     const getPrecioTotal = () => {
         const precioTotal = productCartList.reduce(
-            (acumulador, item) => acumulador + item.price * item.quantity,
+            (acumulador, item) => acumulador + item.price,
             0
         );
         return precioTotal;
     };
 
-    const getTotalQuantity = () => {
-        const total = productCartList.reduce(
-            (acumulador, item) => acumulador + item.quantity,
-            0
-        );
-        return total;
-    }
-
     return (
-        <CartContext.Provider value={{productCartList, addItem, removeItem, clearCart, getPrecioTotal, getTotalQuantity}}>
+        <CartContext.Provider value={{productCartList, addItem, removeItem, clearCart, getPrecioTotal}}>
             {children}
         </CartContext.Provider>
     )
