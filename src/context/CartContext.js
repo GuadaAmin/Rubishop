@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 export const CartContext = React.createContext();
 
-const CartProvider = ({children}) => {
+const CartProvider = ({children, stock}) => {
     const [productCartList, setProductCartList] = useState ([])
 
     const isInCart = (idProducto) => {
@@ -25,6 +25,10 @@ const CartProvider = ({children}) => {
             newArray[product].quantity = newArray[product].quantity + quantity;
             newArray[product].price = newArray[product].quantity * newArray[product].price;
             setProductCartList(newArray);
+            // if (items.quantity > stock) {
+            //     const newArray = productCartList.some(newArray[product].quantity < stock);
+            //     setProductCartList(newArray)
+            // }
         } else {
             const newList = [...productCartList];
             newProduct.price = newProduct.quantity * newProduct.price;
