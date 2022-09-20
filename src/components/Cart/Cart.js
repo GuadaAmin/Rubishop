@@ -1,23 +1,27 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
+import "./Cart.css";
 
 const Cart = () => {
-    const {productCartList, removeItem} = useContext(CartContext);
+    const {productCartList, removeItem, clearCart} = useContext(CartContext);
 
     return (
         <div>
-            <h2>Carrito:</h2>
+            <h2 className='carritoElement'>Carrito:</h2>
             {
-                productCartList.map((items) => {
+                productCartList.map((item) => {
                     return (
-                        <>
-                            <p>{items.title}</p>
-                            <p>{items.quantity}</p>
-                            <button onClick={()=>removeItem(items.id)}>Remover producto</button>
-                        </> 
+                        <div className='itemEnCarrito'>
+                            <img src={item.pictureUrl} height="50px" className='carritoElement' />
+                            <p className='carritoElement'>{item.quantity}</p>
+                            <p className='carritoElement'>{item.title}</p>
+                            <p className='carritoElement'>{item.quantityPrice}</p>
+                            <button onClick={()=>removeItem(item.id)} className='carritoElement'>Remover producto</button>
+                        </div>
                     )
                 })
             }
+            <button onClick={()=>clearCart()} className='carritoElement'>Vaciar carrito</button>
         </div>
     )
 }

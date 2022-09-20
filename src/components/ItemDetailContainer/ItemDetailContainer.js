@@ -27,6 +27,7 @@ const ItemDetailContainer = () => {
         <div className='detail'>
             {!items ? (<h3 className='cargando'>Cargando...</h3>) : (
             <ItemDetail
+                item={items}
                 title={items.title}
                 description={items.description}
                 pictureUrl={items.pictureUrl}

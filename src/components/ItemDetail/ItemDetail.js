@@ -4,16 +4,15 @@ import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
 import { useState } from 'react';
-import data from '../ItemList/mockData';
 
-const ItemDetail = ({title, pictureUrl, description, price}) => {
+const ItemDetail = ({item, title, pictureUrl, description, price}) => {
     const {addItem} = useContext(CartContext);
 
     const [contador, setContador] = useState("-");
 
     const onAdd = (cantidad)=>{
         setContador(cantidad)
-        addItem(data, cantidad)
+        addItem(item, cantidad)
     }
 
 
