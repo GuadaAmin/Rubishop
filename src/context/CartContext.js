@@ -23,11 +23,11 @@ const CartProvider = ({children}) => {
             );
             const newArray = [...productCartList];
             newArray[product].quantity = newArray[product].quantity + quantity;
-            newArray[product].quantityPrice = newArray[product].quantity * newArray[product].precio;
+            newArray[product].price = newArray[product].quantity * newArray[product].price;
             setProductCartList(newArray);
         } else {
             const newList = [...productCartList];
-            newProduct.quantityPrice = newProduct.quantity * newProduct.precio;
+            newProduct.price = newProduct.quantity * newProduct.price;
             newList.push(newProduct);
             setProductCartList(newList);
 
@@ -45,7 +45,7 @@ const CartProvider = ({children}) => {
 
     const getPrecioTotal = () => {
         const precioTotal = productCartList.reduce(
-            (acumulador, item) => acumulador + item.quantityPrice,
+            (acumulador, item) => acumulador + item.price * item.quantity,
             0
         );
         return precioTotal;
