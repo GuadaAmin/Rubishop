@@ -1,3 +1,9 @@
+.cart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .itemEnCarrito {
     display: flex;
     flex-direction: row;
@@ -12,4 +18,33 @@
 .total {
     display: flex;
     flex-direction: column;
+}
+
+.cartGrid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 1fr 2fr;
+    gap: 10px;
+    grid-template-areas: 
+    "cantidad imagen nombre precio remover";
+}
+
+.cantidad {
+    grid-area: cantidad;
+}
+.imagen {
+    grid-area: imagen;
+}
+.nombre {
+    grid-area: nombre;
+}
+.precio {
+    grid-area: precio;
+}
+.remover {
+    grid-area: remover;
+}
+
+.removerButton {
+    display: flex;
+    justify-content: flex-end;
 }

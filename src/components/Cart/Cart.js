@@ -9,19 +9,23 @@ const Cart = () => {
     return (
         <div>
             <h2 className='carritoElement'>Carrito:</h2>
-            {
-                productCartList.map((item) => {
-                    return (
-                        <div className='itemEnCarrito'>
-                            <img src={item.pictureUrl} height="50px" className='carritoElement' />
-                            <p className='carritoElement'>{item.quantity}</p>
-                            <p className='carritoElement'>{item.title}</p>
-                            <p className='carritoElement'>${item.price}</p>
-                            <button onClick={()=>removeItem(item.id)} className='carritoElement'>Remover producto</button>
-                        </div>
-                    )
-                })
-            }   
+            <div className='cart carritoElement'>
+                {
+                    productCartList.map((item) => {
+                        return (
+                            <div className='itemEnCarrito cartGrid'>    
+                                <p className='cantidad'>{item.quantity}</p>
+                                <img src={item.pictureUrl} height="50px" className='producto' />
+                                <p className='producto'>{item.title}</p>
+                                <p className='precio'>${item.price}</p>
+                                <div className='removerButton'>
+                                    <button onClick={()=>removeItem(item.id)} className='remover'>Remover producto</button>
+                                </div>
+                            </div>
+                        )
+                    })
+                }   
+            </div>
             {
                 productCartList.length > 0 ?
                 <div className='total'>

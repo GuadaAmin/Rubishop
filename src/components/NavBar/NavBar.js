@@ -16,7 +16,7 @@ const NavBar= () => {
                 <NavLink to="/categoria/shapemods" className={({isActive}) => isActive ? "linkActivo" : "linkInactivo"}>Shape Mods</NavLink>
                 <NavLink to="/categoria/variedad" className={({isActive}) => isActive ? "linkActivo" : "linkInactivo"}>Variedad</NavLink>
             </div>
-            <NavLink to="/cart" className={({isActive}) => isActive ? "linkActivo" : "linkInactivo"}><CartWidget /></NavLink>
+            <NavLink to="/cart" className="linkInactivo"><CartWidget /></NavLink>
         </div>
     )
 };
