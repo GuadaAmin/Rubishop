@@ -7,6 +7,7 @@ const data = [
         pictureUrl:
             "https://www.tradeinn.com/f/13877/138770305/qiyi-3x3-stickerless-rubik-cube.jpg",
         categoria: "originales",
+        stock: 10,
     },
     {
         id: "2",
@@ -16,6 +17,7 @@ const data = [
         pictureUrl:
             "https://m.media-amazon.com/images/I/71TrvUl50OL.jpg",
         categoria: "shapemods",
+        stock: 10,
     },
     {
         id: "3",
@@ -25,6 +27,7 @@ const data = [
         pictureUrl:
             "https://ae01.alicdn.com/kf/HTB12_gixQyWBuNjy0Fpq6yssXXa0.jpg",
         categoria: "variedad",
+        stock: 10,
     },
     {
         id: "4",
@@ -34,6 +37,7 @@ const data = [
         pictureUrl:
             "https://ae01.alicdn.com/kf/Hbdd9b68fdf8341d284f7c22ba4e398b6S/Axis-Cube-Moyu-Mofangjiaoshi-Stickerless-Fluctuation-Jin-gang-Magic-Cube-Axis-Speed-Puzzle-Educational-Toys-For.jpg_Q90.jpg_.webp",
         categoria: "shapemods",
+        stock: 10,
     },
     {
         id: "5",
@@ -43,6 +47,7 @@ const data = [
         pictureUrl:
             "https://curubik.com/cdn-cgi/image/format=auto/https://www.curubik.com/media/productos/thumbnail/qiyi-windmill-s.jpg",
         categoria: "shapemods",
+        stock: 10,
     },
     {
         id: "6",
@@ -52,6 +57,7 @@ const data = [
         pictureUrl:
             "https://mastercubestore.com/4014-Coolshop_Size/mofang-jiaoshi-fisher-cube-v2-3x3-stickerless.jpg",
         categoria: "shapemods",
+        stock: 10,
     },
     {
         id: "7",
@@ -61,6 +67,7 @@ const data = [
         pictureUrl:
             "https://http2.mlstatic.com/D_NQ_NP_632602-MLA43600334694_092020-O.webp",
         categoria: "originales",
+        stock: 10,
     },
     {
         id: "8",
@@ -70,6 +77,7 @@ const data = [
         pictureUrl:
             "https://m.media-amazon.com/images/I/61WivrA1eML._AC_SY355_.jpg",
         categoria: "originales",
+        stock: 10,
     },
     {
         id: "9",
@@ -79,6 +87,7 @@ const data = [
         pictureUrl:
             "https://http2.mlstatic.com/D_NQ_NP_742441-MLA45319132858_032021-V.jpg",
         categoria: "originales",
+        stock: 10,
     },
     {
         id: "10",
@@ -88,6 +97,7 @@ const data = [
         pictureUrl:
             "https://cuboss.com/wp-content/uploads/2021/02/moyu-puppet-cube-i.jpg",
         categoria: "variedad",
+        stock: 10,
     },
     {
         id: "11",
@@ -97,6 +107,7 @@ const data = [
         pictureUrl:
             "https://cubezz.com/images/201610/goods_img/5082_P_1477625781833.jpg",
         categoria: "variedad",
+        stock: 10,
     },
     {
         id: "12",
@@ -106,6 +117,7 @@ const data = [
         pictureUrl:
             "https://cf.shopee.com.ar/file/465f3c1b65c1759401d532fd9d25454c",
         categoria: "variedad",
+        stock: 10,
     }
 ];
 
