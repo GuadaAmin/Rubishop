@@ -4,7 +4,7 @@ import "./Cart.css";
 import { Link } from 'react-router-dom';
 
 const Cart = () => {
-    const {productCartList, removeItem, clearCart, getPrecioTotal} = useContext(CartContext);
+    const {productCartList, removeItem, clearCart, getTotalPrice} = useContext(CartContext);
 
     return (
         <div>
@@ -15,7 +15,7 @@ const Cart = () => {
                         return (
                             <div className='itemEnCarrito cartGrid'>    
                                 <p className='cantidad'>{item.quantity}</p>
-                                <img src={item.pictureUrl} height="50px" className='producto' />
+                                <img src={item.pictureUrl} height="50px" className='producto' alt={item.description} />
                                 <p className='producto'>{item.title}</p>
                                 <p className='precio'>${item.price}</p>
                                 <div className='removerButton'>
@@ -29,7 +29,7 @@ const Cart = () => {
             {
                 productCartList.length > 0 ?
                 <div className='total'>
-                    <h3 className='carritoElement'>Total: ${getPrecioTotal()}</h3>
+                    <h3 className='carritoElement'>Total: ${getTotalPrice()}</h3>
                     <button onClick={()=>clearCart()} className='carritoElement'>Vaciar carrito</button>
                 </div>
                 :

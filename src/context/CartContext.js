@@ -43,7 +43,7 @@ const CartProvider = ({children}) => {
         setProductCartList(productsInCart);
     }
 
-    const getPrecioTotal = () => {
+    const getTotalPrice = () => {
         const precioTotal = productCartList.reduce(
             (acumulador, item) => acumulador + item.price,
             0
@@ -60,7 +60,7 @@ const CartProvider = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value={{productCartList, addItem, removeItem, clearCart, getPrecioTotal, getTotalProducts}}>
+        <CartContext.Provider value={{productCartList, addItem, removeItem, clearCart, getTotalPrice, getTotalProducts}}>
             {children}
         </CartContext.Provider>
     )
