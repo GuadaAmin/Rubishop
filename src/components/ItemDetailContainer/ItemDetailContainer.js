@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         const getData = async() => {
-            const query = doc(database, "items")
+            const query = doc(database, "items", productId)
             const response = await getDoc(query)
             const data = {
                 ...response.data(),
@@ -22,20 +22,7 @@ const ItemDetailContainer = () => {
             setItems(data)
         }
         getData()
-    }, [])
-
-    const getItems = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const detalle = items.find(items => items.id === productId);
-            resolve(detalle);
-        }, 2000);
-    });
-
-    useEffect(() => {
-        getItems.then((result) => {
-            setItems(result);
-        })
-    }, [productId]);
+    }, [productId])
 
     return (
         <div className='detail'>
