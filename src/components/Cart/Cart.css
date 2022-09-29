@@ -1,3 +1,8 @@
+.elementoCentrado {
+    display: flex;
+    justify-content: center;
+}
+
 .cart {
     display: flex;
     justify-content: center;
@@ -62,10 +67,6 @@ fieldset {
 input {
     padding: .2rem;
     width: 100%;
-}
-.orderForm {
-    display: flex;
-    justify-content: center;
 }
 .button {
     background-color: rgb(191, 236, 232);

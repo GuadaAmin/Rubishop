@@ -54,9 +54,11 @@ const Cart = () => {
                     {
                         productCartList.length > 0 ?
                         <div className='total'>
-                            <h3 className='carritoElement'>Total: ${getTotalPrice()}</h3>
-                            <button onClick={()=>clearCart()} className='carritoElement'>Vaciar carrito</button>
-                            <div className='orderForm'>
+                            <div className='elementoCentrado'>
+                                <h3 className='carritoElement'>Total: ${getTotalPrice()}</h3>
+                                <button onClick={()=>clearCart()} className='carritoElement'>Vaciar carrito</button>
+                            </div>
+                            <div className='elementoCentrado'>
                                 <form onSubmit={sendOrder}>
                                     <fieldset> 
                                         <legend><strong>Enviar pedido:</strong></legend>
@@ -82,7 +84,7 @@ const Cart = () => {
                             </div>
                         </div>
                         :
-                        <div>
+                        <div className='elementoCentrado'>
                             <p className='carritoElement'>El carrito está vacío</p>
                             <Link to='/' className='carritoElement'><button>Ver productos</button></Link>
                         </div>
