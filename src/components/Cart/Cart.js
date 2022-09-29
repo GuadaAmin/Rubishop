@@ -13,10 +13,10 @@ const Cart = () => {
         event.preventDefault();
         const order = {
             client: {
-                name: event.target[0].value,
-                surname: event.target[1].value,
-                email: event.target[2].value,
-                number: event.target[3].value,
+                name: event.target[1].value,
+                surname: event.target[2].value,
+                email: event.target[3].value,
+                number: event.target[4].value,
             },
             items: productCartList,
             total: getTotalPrice(),
