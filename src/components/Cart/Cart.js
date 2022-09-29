@@ -56,28 +56,30 @@ const Cart = () => {
                         <div className='total'>
                             <h3 className='carritoElement'>Total: ${getTotalPrice()}</h3>
                             <button onClick={()=>clearCart()} className='carritoElement'>Vaciar carrito</button>
-                            <form onSubmit={sendOrder}>
-                                <fieldset> 
-                                    <legend><strong>Enviar pedido:</strong></legend>
-                                    <div>
-                                        <label for="nombre">Nombre:</label>
-                                        <input type="text" name="name" />
-                                    </div>
-                                    <div>
-                                        <label for="nombre">Apellido:</label>
-                                        <input type="text" name="surname" />
-                                    </div>
-                                    <div>
-                                        <label for="email">Email:</label>
-                                        <input type="email" name="email" />
-                                    </div>
-                                    <div>
-                                        <label for="numero">Número de telefono:</label>
-                                        <input type="number" name="number" />
-                                    </div>
-                                    <input type="submit" value="Guardar orden" class="button" /> <input type="reset" value="Borrar" class="button" />
-                                </fieldset>
-                            </form>
+                            <div className='orderForm'>
+                                <form onSubmit={sendOrder}>
+                                    <fieldset> 
+                                        <legend><strong>Enviar pedido:</strong></legend>
+                                        <div>
+                                            <label for="nombre">Nombre:</label>
+                                            <input type="text" name="name" />
+                                        </div>
+                                        <div>
+                                            <label for="nombre">Apellido:</label>
+                                            <input type="text" name="surname" />
+                                        </div>
+                                        <div>
+                                            <label for="email">Email:</label>
+                                            <input type="email" name="email" />
+                                        </div>
+                                        <div>
+                                            <label for="numero">Número de telefono:</label>
+                                            <input type="number" name="number" />
+                                        </div>
+                                        <input type="submit" value="Guardar orden" className="button" /> <input type="reset" value="Borrar" className="button" />
+                                    </fieldset>
+                                </form>
+                            </div>
                         </div>
                         :
                         <div>
