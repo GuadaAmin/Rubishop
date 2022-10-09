@@ -3,7 +3,6 @@ import './ItemCount.css';
 import { useState } from "react";
 
 const ItemCount = ({nombreProducto, stock, initial, onAdd}) => {
-    
     const [ItemCount, setItemCount] = useState(initial);
         const sumar = () => {
             if (ItemCount < stock){
@@ -11,7 +10,7 @@ const ItemCount = ({nombreProducto, stock, initial, onAdd}) => {
             } else {
                 setItemCount(1)
             }
-        }
+        } 
         const restar = () => {
             if (ItemCount > 1){
                 setItemCount(ItemCount - 1);

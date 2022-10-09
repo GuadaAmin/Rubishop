@@ -2,6 +2,23 @@
     padding: 1rem;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     min-height: 80vh;
+}
+
+.fotoIndex {
+    max-height: 75vh;
+    justify-content: center;
+    padding-bottom: 1rem;
+    transition: all 1s;
+}
+
+.fotoIndex:hover {
+    transform: scale(1.05);
+}
+
+.textoI {
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 50vw ;
 }

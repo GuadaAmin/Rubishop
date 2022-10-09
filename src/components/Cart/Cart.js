@@ -33,7 +33,7 @@ const Cart = () => {
         <div>
             {!orderId ?
                 <div>
-                    <h2 className='carritoElement'>Carrito:</h2>
+                    <h2 className='elementoCentrado'>Carrito:</h2>
                     <div className='cart carritoElement'>
                         {
                             productCartList.map((item) => {
@@ -91,7 +91,7 @@ const Cart = () => {
                     }
                 </div>
                 :
-                <h3>Tu orden ha sido registrada!</h3>
+                <h3 className='elementoCentrado'>Tu orden ha sido registrada!</h3>
             }
         </div>
     )

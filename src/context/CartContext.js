@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState } from 'react'; 
 
 export const CartContext = React.createContext();
 
@@ -10,7 +10,7 @@ const CartProvider = ({children}) => {
         const duplicatedProduct =   productCartList.some((item) => item.id === idProducto);
         return duplicatedProduct;
     }
-
+    
     const addItem = (items, quantity) => {
         const newProduct = {
             ...items,
@@ -22,7 +22,11 @@ const CartProvider = ({children}) => {
                 (producto) => producto.id === items.id
             );
             const newArray = [...productCartList];
-            newArray[product].quantity = newArray[product].quantity + quantity;
+            if (newArray[product].quantity + quantity < items.stock) {
+                newArray[product].quantity = newArray[product].quantity + quantity;
+            } else {
+                newArray[product].quantity = items.stock;
+            }
             newArray[product].price = newArray[product].quantity * newArray[product].price;
             setProductCartList(newArray);
         } else {
@@ -33,6 +37,7 @@ const CartProvider = ({children}) => {
 
         }
     }
+
 
     const clearCart = () => {
         setProductCartList([])
